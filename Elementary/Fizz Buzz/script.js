@@ -1,8 +1,13 @@
 "use strict";
 
 function fizzBuzz(data) {
-    return data;
+    if (!(data % 3) || !(data % 5)) {
+        if (!(data % 3) && !(data % 5)) return "Fizz Buzz";
+        else if (!(data % 3)) return "Fizz";
+        else return "Buzz";
+    } else return data;
 }
+// console.log(fizzBuzz(52));
 
 var assert = require('assert');
 
