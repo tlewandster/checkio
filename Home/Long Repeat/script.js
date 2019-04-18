@@ -1,7 +1,14 @@
 "use strict";
 
 function longRepeat(line) {
-
+    let lastChar = '';
+    let len = 1;
+    let max = 0;
+    for (let i = 0; i < line.length; i++) {
+        lastChar === (lastChar = line[i]) ? len++ : len = 1;
+        if (len > max) max = len;
+    }
+    return max;
 }
 
 var assert = require('assert');
