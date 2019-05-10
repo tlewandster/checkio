@@ -1,7 +1,7 @@
 "use strict";
 
 function findMessage(data) {
-    return data;
+    return (data.match(/[A-Z]/g) || [""]).join("");
 }
 
 var assert = require('assert');
