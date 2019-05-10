@@ -1,10 +1,8 @@
 "use strict";
 
 function secondIndex(text, symbol) {
-    // returns the second index of a symbol in a given text
-
-    // your code here
-    return 0;
+    let result = text.indexOf(symbol, text.indexOf(symbol) + 1);
+    return result === -1 ? undefined : result;
 }
 
 var assert = require('assert');
