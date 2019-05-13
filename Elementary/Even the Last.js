@@ -1,8 +1,13 @@
 "use strict";
 
 function evenLast(data) {
-    return 0;
+    return data.length ? data[data.length - 1] * data
+        .filter((_, index) => index % 2 === 0)
+        .reduce((prev, current) => {
+            return prev + current
+        }, 0) : 0
 }
+
 
 var assert = require('assert');
 
