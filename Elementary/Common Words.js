@@ -1,7 +1,11 @@
 "use strict";
 
 function commonWords(first, second) {
-    return "";
+    return (first + "," + second)
+    .split(',')
+    .sort()
+    .filter((v,i,a)=> a[i]===a[i+1])
+    .join(',');
 }
 
 var assert = require('assert');
