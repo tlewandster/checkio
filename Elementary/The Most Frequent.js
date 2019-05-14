@@ -1,10 +1,12 @@
 "use strict";
 
 function mostFrequent(data) {
-    // returns the most frequenly occuring string in the given array
 
-    // your code here
-    return '';
+    const counted = data.reduce((p, c) => {
+        p[c] ? p[c] += 1 : p[c] = 1;
+        return p;
+    }, {});
+    return Object.keys(counted).find(key => counted[key] === Math.max(...Object.values(counted)));
 }
 
 var assert = require('assert');
