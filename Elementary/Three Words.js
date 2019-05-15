@@ -1,7 +1,11 @@
 "use strict";
 
 function threeWords(data) {
-    return true || false;
+    return data
+        .split(' ')
+        .map(e => e * 1 ? 0 : 1)
+        .join('')
+        .includes('111');
 }
 
 var assert = require('assert');
