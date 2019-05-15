@@ -1,10 +1,7 @@
 "use strict";
 
 function betweenMarkers(text, begin, end) {
-    // returns substring between two given markers
-
-    // your code here
-    return 0;
+    return text.substring(text.indexOf(begin)+1,text.indexOf(end));
 }
 
 var assert = require('assert');
