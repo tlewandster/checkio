@@ -2,12 +2,15 @@
 
 function numberRadix(str_number, radix) {
     const strTable = [...'0123456789ABCDEFGHIJKLMNOPQRSTUWVXYZ'];
+    for (let item of str_number) {
+        if (strTable.indexOf(item) >= radix) return -1;
+    }
     return [...str_number]
         .reverse()
         .reduce((acc, val, index) => acc + strTable.indexOf(val) * Math.pow(radix, index), 0);
 }
 
-console.log(numberRadix("AB", 10));
+console.log(numberRadix("909", 9));
 
 /* var assert = require('assert');
 
