@@ -1,16 +1,13 @@
 "use strict";
 
 function firstWord(a, b) {
-    // returns the first word in a given text.
-
-    // your code here
-    return 0;
+    return a.match(/\b\w*\'?\w*\b/i)[0];
 }
 
 var assert = require('assert');
 if (!global.is_checking) {
     console.log('Example:')
-    console.log(firstWord("Hello world"))
+    console.log(firstWord("don't touch it"))
 
     // These "asserts" using for self-checking and not for auto-testing
     assert.equal(firstWord("Hello world"), "Hello")
