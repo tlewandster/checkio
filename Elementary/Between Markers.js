@@ -1,9 +1,16 @@
 'use strict';
 
 function betweenMarkers(text, begin, end) {
-  const re = new RegExp(`${begin}(.*)${end}`);
-  console.log(text.match(re)[1]);
-  return text.match(re)[1];
+  let startMakerIndex = text.indexOf(begin);
+  let endMarkerIndex = text.indexOf(end);
+  if (startMakerIndex != -1 && endMarkerIndex != -1) {
+    if (startMakerIndex < endMarkerIndex)
+      return text.slice(startMakerIndex + begin.length, endMarkerIndex);
+    else return '';
+  } else if (startMakerIndex != -1)
+    return text.slice(startMakerIndex + begin.length);
+  else if (endMarkerIndex != -1) return text.slice(0, endMarkerIndex);
+  else return text;
 }
 
 var assert = require('assert');
