@@ -1,7 +1,12 @@
 'use strict';
 
 function isAscending(items) {
-  return items.filter((v, i) => v[i] - v[i + 1] >= 0) ? false : true;
+  let result = true;
+  items.reduce((prev, curr) => {
+    result = prev - curr < 0 ? true : false || result;
+    return curr;
+  });
+  return result;
 }
 
 var assert = require('assert');
