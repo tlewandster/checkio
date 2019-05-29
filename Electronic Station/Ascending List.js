@@ -1,12 +1,15 @@
 'use strict';
 
 function isAscending(items) {
-  let result = true;
-  items.reduce((prev, curr) => {
-    result = prev - curr < 0 ? true : false || result;
-    return curr;
-  });
-  return result;
+  if (items.length == 0 || items.length == 1) return true;
+  else {
+    let result = true;
+    items.reduce((p, c) => {
+      result = result && c - p > 0 ? true : false;
+      return c;
+    });
+    return result;
+  }
 }
 
 var assert = require('assert');
