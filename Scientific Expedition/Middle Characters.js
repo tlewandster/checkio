@@ -1,10 +1,8 @@
 'use strict';
 
 function middle(text) {
-  let start = Math.floor(text.length / 2);
-  let end = start + 1 + (text.length % 2);
-  console.log(start, end);
-
+  let start = Math.round(text.length / 2)-1;
+  let end = start + 2 - (text.length % 2);
   return text.slice(start, end);
 }
 
