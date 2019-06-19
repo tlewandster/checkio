@@ -2,12 +2,13 @@
 
 function house(plan) {
   let area = plan.split('\n');
-  console.table(area);
 
   area = trimmArray(area);
-  console.table(area);
-  transpositionArray(area);
-  trimmArray(area);
+  if (area.length == 0) return 0;
+  area = transpositionArray(area);
+  area = trimmArray(area);
+
+  return area.length * area[0].length;
 
   function trimmArray(array) {
     const trueMap = array.map(item => item.includes('#'));
@@ -18,9 +19,10 @@ function house(plan) {
 
   function transpositionArray(array) {
     const transArray = [];
+    for (let i = 0; i < array[0].length; i++) transArray.push([]);
     array.forEach(item => {
       for (let i = 0; i < item.length; i++) {
-        transArray.push(item[i]);
+        transArray[i].push(item[i]);
       }
     });
     return transArray;
